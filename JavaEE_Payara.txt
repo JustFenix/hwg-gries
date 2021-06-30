@@ -1,0 +1,30 @@
+Payara Server donwloaden.
+In Netbeans einbinden.
+Java Version für den Server beachten.
+
+
+Neuesten JDBC Treiber für den Server bereitstellen.
+asadmin add-library /path_to/mysql-connector-java-8.x.jar
+restart Server
+
+Connection Pool anlegen.
+localhost:4848 
+
+Resources
+    '-JDBC
+        '-JDBC Connection Pools     -New
+                                        Pool Name                   <webAppPool>
+                                        Resource Type               <javax.sql.DataSource>
+                                        Database Driver Vendor      <mySql8>
+                                    -Next
+                                        Add Property
+                                        <Databasename>              <webAppDB>
+                                        <User>                      <webAppDB_user>
+                                        <Password>                  <webAppDB_password>
+                                        <UseSSL>                    <false>
+                                        <Servername>                <localhost>
+                                        <AllowPublicKeyRetrieval>   <true>
+        '-JDBC Resources            -New
+                                        JNDI Name                   <jdbc/webAppDS>
+                                        Pool Name                   <webAppPool>
+                                    

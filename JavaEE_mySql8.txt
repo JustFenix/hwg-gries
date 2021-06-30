@@ -1,0 +1,9 @@
+Docker Container für mySql8
+
+docker run --name mysqlStore -v ${PWD}\MySqlData:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=mysql8 -d -p3306:3306 mysql:8
+
+MySqlWorkbench:
+Create Datamodel 
+Schema              <webAppDB>          Databasename ConnectionPool
+
+User für Schema     <webAppDB_user>     User ConnectionPool 
